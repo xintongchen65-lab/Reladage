@@ -1,0 +1,22 @@
+{
+    "name" : "RehabMotion",
+    "appid" : "__UNI__REHABMOTION",
+    "description" : "专注居家运动康复的微信小程序",
+    "versionName" : "1.0.0",
+    "versionCode" : "100",
+    "transformPx" : false,
+    "vueVersion" : "3",
+    "mp-weixin" : {
+        "appid" : "wx2645683c9f9a7b09",
+        "setting" : {
+            "urlCheck" : false,
+            "es6" : true,
+            "postcss" : true,
+            "minified" : true
+        },
+        "usingComponents" : true
+    },
+    "uniStatistics" : {
+        "enable" : false
+    }
+}

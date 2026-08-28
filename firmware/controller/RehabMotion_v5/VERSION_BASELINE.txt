@@ -1,0 +1,4 @@
+RehabMotion_v5
+Baseline source: V4.4.31F1 angle-zero recovery build.
+Naming-only repack: sketch folder/file/build name changed to RehabMotion_v5; algorithm intentionally unchanged.
+Use this as the current firmware baseline.

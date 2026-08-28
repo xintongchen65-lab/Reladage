@@ -1,0 +1,10 @@
+{
+  "data_origin": "SYNTHETIC_SAMPLE",
+  "period": "weekly",
+  "sessions_completed": 5,
+  "sessions_planned": 6,
+  "completion_rate_pct": 83.3,
+  "qualified_reps_pct": 87.0,
+  "max_rom_deg": 92.0,
+  "trend": "improving"
+}

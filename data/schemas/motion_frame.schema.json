@@ -1,0 +1,20 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"RehabMotion MotionFrame",
+  "type":"object",
+  "required":["timestamp_ms","exercise","primary_joint_angle_deg","quality"],
+  "properties":{
+    "timestamp_ms":{"type":"integer","minimum":0},
+    "exercise":{"type":"string"},
+    "primary_joint_angle_deg":{"type":"number"},
+    "secondary_joint_angle_deg":{"type":"number"},
+    "upper_arm_deviation_deg":{"type":"number"},
+    "plane_deviation_deg":{"type":"number"},
+    "torso_tilt_deg":{"type":"number"},
+    "angular_speed_deg_s":{"type":"number"},
+    "stability_score":{"type":"number","minimum":0,"maximum":1},
+    "rep_completed":{"type":"boolean"},
+    "rep_accepted":{"type":"boolean"},
+    "quality":{"type":"string"}
+  }
+}

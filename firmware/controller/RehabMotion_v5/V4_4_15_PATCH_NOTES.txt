@@ -1,0 +1,24 @@
+RehabMotion V4.4.16 COMPILE FIX
+
+This revision fixes a V4.4.14 migration error in torso_reference.h.
+TRFrontSnapshot was correctly changed from {a,b,d} to {a,b,e}, but three old call sites still referenced s.d.
+Fixed:
+- trCaptureNeutral(): s.d -> s.e for E gravity and E quaternion.
+- trFrontGeometry(): s.d -> s.e for E torso gravity.
+- Geometry/local variable names and serial labels updated from D/gd/D_tilt to E/ge/E_tilt where they represented the torso sensor.
+
+No training thresholds, ROM math, semantic K11 math, or ABCDE role mapping were changed by this compile-fix revision.
+A=left upper, B=left lower, C=right upper, D=right lower, E=waist/abdomen.
+
+RehabMotion V4.4.16 PATCH NOTES
+
+1. 传感器角色固定为 A左上 / B左下 / C右上 / D右下 / E腰腹。
+2. 新增 E 槽位，MAC=f3:72:ae:1f:e4:e9，型号标注 WT901BLE67。
+3. WT901 存储槽位由4扩为5；ACTIVE_INDICES 改为0,1,2,3,4。
+4. D 不再作为 torso。TORSO_REF_SLOT 从3改为4。
+5. BODY_AZ 从 verticalGyro(A)-verticalGyro(D) 改为 verticalGyro(A)-verticalGyro(E)。
+6. 躯干倾斜 T 全部读取 E。
+7. AB 左侧 pair、CD 右侧 pair 保持不变。
+8. 当前正式训练仍默认 AB；未擅自打开双侧训练 UI。
+9. 扫描、连接、状态输出升级为 A/B/C/D/E。
+10. 未进行完整 Arduino 编译；已进行静态一致性检查。

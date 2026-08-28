@@ -1,0 +1,5 @@
+V4.4.31F
+正式 P 不再使用从校准开始长期累计的 heading。
+每个动作：P = |(A-E)_current - (A-E)_attempt_baseline|。
+动作完成后 baseline 立即更新为当前返回起始位。
+阈值 soft=7° / hard=9° / severe=16°。

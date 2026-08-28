@@ -1,0 +1,10 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"RehabMotion Device State",
+  "type":"object",
+  "required":["device_id","online","imu_mask","sd_ready"],
+  "properties":{
+    "device_id":{"type":"string"},"online":{"type":"boolean"},"battery":{"type":"integer","minimum":0,"maximum":100},
+    "imu_mask":{"type":"integer","minimum":0,"maximum":31},"wifi":{"type":"boolean"},"sd_ready":{"type":"boolean"},"firmware":{"type":"string"}
+  }
+}

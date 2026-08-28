@@ -1,0 +1,22 @@
+alter table app_users enable row level security;
+alter table family_members enable row level security;
+alter table member_permissions enable row level security;
+alter table devices enable row level security;
+alter table member_devices enable row level security;
+alter table training_plans enable row level security;
+alter table training_sessions enable row level security;
+alter table training_session_items enable row level security;
+alter table messages enable row level security;
+alter table message_reads enable row level security;
+
+grant usage on schema public to service_role;
+grant select, insert, update, delete on app_users to service_role;
+grant select, insert, update, delete on family_members to service_role;
+grant select, insert, update, delete on member_permissions to service_role;
+grant select, insert, update, delete on devices to service_role;
+grant select, insert, update, delete on member_devices to service_role;
+grant select, insert, update, delete on training_plans to service_role;
+grant select, insert, update, delete on training_sessions to service_role;
+grant select, insert, update, delete on training_session_items to service_role;
+grant select, insert, update, delete on messages to service_role;
+grant select, insert, update, delete on message_reads to service_role;

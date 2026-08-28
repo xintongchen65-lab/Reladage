@@ -1,0 +1,12 @@
+# Treat design/media assets as binary.
+*.stl binary
+*.step binary
+*.stp binary
+*.3mf binary
+*.obj binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.mp4 binary
+*.bin binary

@@ -1,0 +1,68 @@
+RehabMotion v14.3 五 IMU 稳定版
+================================
+
+目标
+----
+让原 ESP32-S3 主控同时连接 A/B/C/D/E 五个 WT901 BLE IMU。
+本版本不修改 7 寸屏工程，也不修改训练算法、K11、SD 或 UART 协议。
+
+必须使用的环境
+--------------
+1. Arduino ESP32 开发板核心：3.1.1（沿用原工程环境）。
+2. NimBLE-Arduino：2.5.0 或更高版本。
+
+不要使用旧版 NimBLE-Arduino。2.5.0 已包含 ESP32-S3 多连接上限修复，
+并提供本工程使用的连接重试接口。
+
+重要文件
+--------
+build_opt.h
+  这是五连接生效的关键文件，不能删除、不能移动。
+  它把 NimBLE 编译时连接上限设为 6：五个 IMU 工作连接，加一个余量。
+
+real_imu_abcde.h
+  已改为 NimBLE-Arduino 2.x API，并加入：
+  - 正确保存 BLE 地址类型；
+  - 串行连接与首包确认；
+  - 每个 IMU 最多三轮连接；
+  - 失败 client 的完整释放；
+  - 20～30 ms 多连接参数；
+  - MTU 23，避免五条连接进行不必要的 MTU 交换。
+
+Arduino IDE 操作
+---------------
+1. 在库管理器搜索 NimBLE-Arduino。
+2. 安装或升级到 2.5.0 或更高版本。
+3. 关闭手机上的 WT901/维特智能 APP，确保五个 IMU 没被其他设备占用。
+4. 打开 RehabMotion_v14_3_5IMU_STABLE.ino。
+5. 开发板选择原来的 ESP32-S3 设置，编译并烧录原 ESP32 主控。
+
+启动日志检查
+------------
+首先必须看到：
+
+NimBLE compiled max connections: 6
+Required simultaneous IMU connections: 5
+
+最后应看到：
+
+IMU_A connected=YES notify=YES
+IMU_B connected=YES notify=YES
+IMU_C connected=YES notify=YES
+IMU_D connected=YES notify=YES
+IMU_E connected=YES notify=YES
+Receiving IMUs: 5/5
+RESULT: PASS, ESP32 is receiving data from A/B/C/D/E.
+
+如果第一行仍显示 3 或 4
+-----------------------
+说明 build_opt.h 没有参与编译，或者 Arduino 使用了旧的缓存/旧版 NimBLE：
+1. 确认 build_opt.h 与 .ino 在同一个工程文件夹；
+2. 确认工程文件夹名称与 .ino 名称完全一致；
+3. 删除 Arduino 的构建缓存后重新编译；
+4. 再次确认 NimBLE-Arduino 版本不低于 2.5.0。
+
+硬件实机验证仍然必要
+------------------
+编译通过只能证明接口和配置正确。最终必须以串口的 Receiving IMUs: 5/5
+以及五个 IMU 都持续增加 packets 为准。

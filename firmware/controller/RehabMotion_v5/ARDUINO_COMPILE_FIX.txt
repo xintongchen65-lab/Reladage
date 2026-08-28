@@ -1,0 +1,8 @@
+Arduino compile note
+====================
+No host-only .cpp unit-test file is included in this sketch directory.
+Arduino compiles every .cpp file beside the .ino, so desktop tests that define
+SerialStub/main must stay outside the Arduino sketch folder.
+
+Do NOT add the old test_torso_reference.cpp back into this folder.
+Do NOT replace any host SerialStub with Serial2 in firmware code.

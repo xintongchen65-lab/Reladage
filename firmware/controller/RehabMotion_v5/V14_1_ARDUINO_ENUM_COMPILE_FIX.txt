@@ -1,0 +1,22 @@
+RehabMotion v14.1 Arduino 编译修复
+
+报错：
+'ScreenUiState' does not name a type
+
+原因：
+Arduino 对 .ino 文件会自动生成函数原型。
+currentScreenState() 原本返回 sketch 内部定义的 enum ScreenUiState，
+自动生成的原型可能被放到 enum 定义之前，导致类型尚未声明。
+
+修复：
+static ScreenUiState currentScreenState()
+改为
+static uint8_t currentScreenState()
+
+以及：
+const ScreenUiState st
+改为
+const uint8_t st
+
+SCREEN_HOME / SCREEN_WEAR / ... 等枚举值保持不变，
+通信协议字段数值不变，屏幕端无需改协议。

@@ -1,0 +1,44 @@
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Node / uni-app
+node_modules/
+dist/
+build/
+unpackage/
+coverage/
+*.log
+pnpm-debug.log*
+npm-debug.log*
+
+# PlatformIO / Arduino generated files
+.pio/
+.pioenvs/
+.piolibdeps/
+.vscode/
+
+# Secrets: examples are allowed, real local env files are not
+.env
+.env.*
+!.env.example
+
+# Temporary files
+.tmp/
+tmp/
+Temp/
+Logs/
+*.bak
+*.swp
+
+# 3D-print generated machine output
+*.gcode

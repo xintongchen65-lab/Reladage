@@ -1,0 +1,19 @@
+RehabMotion V4.4.27 主控修复
+==============================
+
+1. 保留 V4.4.26 的角度“越做越小/负零点”修复。
+2. 新增 IMU 热重连：
+   - 某个 IMU 开机时没打开，不再要求重启 ESP32。
+   - 在首页/IMU佩戴检查页，主控会周期性重新扫描缺失 IMU。
+   - 检测到刚开机的目标 IMU 后，只重连该缺失设备。
+   - 连接成功后立即刷新 7 寸屏的 A/B/C/D/E 连接状态。
+   - 五个全连接后仍停留在佩戴/连接检查页，不自动跳首页，用户自行点击开始定位。
+3. 为避免破坏动作参考，正式校准/训练期间不做阻塞式自动重连；若训练中掉线，应退出到连接检查页后恢复连接再重新校准。
+
+预期串口：
+WT901_AUTO_RECONNECT_BEGIN ...
+FOUND IMU_X ...
+WT901_AUTO_RECONNECT_FOUND IMU_X -> connect
+IMU_X connected, subscribed and receiving.
+WT901_AUTO_RECONNECT_ALL_READY ...
+SCREEN_IMU_MASK_REFRESH ...

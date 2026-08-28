@@ -1,0 +1,85 @@
+{
+  "pages": [
+    { "path": "pages/game-center/index", "style": { "navigationStyle": "custom" } },
+    { "path": "pages/demo/index", "style": { "navigationStyle": "custom" } }
+    // #ifndef MP-WEIXIN
+    ,{ "path": "pages-fruit-game/home/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-fruit-game/prepare/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-fruit-game/game/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-fruit-game/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-fruit-game/multiplayer/lobby/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-fruit-game/multiplayer/room/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-fruit-game/multiplayer/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-penalty-game/home/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-penalty-game/prepare/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-penalty-game/calibrate/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-penalty-game/game/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-penalty-game/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-penalty-game/multiplayer/lobby/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-penalty-game/multiplayer/room/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-penalty-game/multiplayer/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-vitality-park/home/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-vitality-park/prepare/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-vitality-park/game/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-vitality-park/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-mole-game/home/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-mole-game/prepare/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-mole-game/game/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-mole-game/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+    { "path": "pages-mole-game/multiplayer/lobby/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-mole-game/multiplayer/room/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+    { "path": "pages-mole-game/multiplayer/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } }
+    // #endif
+  ],
+  // #ifdef MP-WEIXIN
+  "subPackages": [
+    {
+      "root": "pages-fruit-game",
+      "pages": [
+        { "path": "home/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "prepare/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "game/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "multiplayer/lobby/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "multiplayer/room/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "multiplayer/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } }
+      ]
+    },
+    {
+      "root": "pages-penalty-game",
+      "pages": [
+        { "path": "home/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "prepare/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "calibrate/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "game/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "multiplayer/lobby/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "multiplayer/room/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "multiplayer/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } }
+      ]
+    },
+    {
+      "root": "pages-vitality-park",
+      "pages": [
+        { "path": "home/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "prepare/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "game/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } }
+      ]
+    },
+    {
+      "root": "pages-mole-game",
+      "pages": [
+        { "path": "home/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "prepare/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "game/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } },
+        { "path": "multiplayer/lobby/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "multiplayer/room/index", "style": { "navigationStyle": "custom", "pageOrientation": "portrait" } },
+        { "path": "multiplayer/result/index", "style": { "navigationStyle": "custom", "pageOrientation": "landscape" } }
+      ]
+    }
+  ],
+  // #endif
+  "globalStyle": { "navigationBarTextStyle": "black", "navigationBarTitleText": "RehabMotion", "navigationBarBackgroundColor": "#f3f8ef", "backgroundColor": "#f3f8ef" }
+}

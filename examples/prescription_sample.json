@@ -1,0 +1,10 @@
+{
+  "data_origin": "SYNTHETIC_SAMPLE",
+  "plan_id": 20260827001,
+  "patient_alias": "sample-user",
+  "items": [
+    {"exercise":"dumbbell_curl","name":"哑铃弯举","sets":3,"reps":10,"target_deg":80},
+    {"exercise":"triceps_extension","name":"肱三头肌伸展","sets":2,"reps":10,"target_deg":75},
+    {"exercise":"knee_flex_extend","name":"膝关节屈伸","sets":3,"reps":10,"target_deg":80}
+  ]
+}

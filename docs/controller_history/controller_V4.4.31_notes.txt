@@ -1,0 +1,23 @@
+RehabMotion V4.4.31
+日期：2026-08-25
+
+修复：V4.4.30 动作校准反复循环。
+
+日志已确认每次 K11 都成功到 READY（峰值约 109.7~125.1°），但随后都被旧的 raw B quaternion 平面门槛拒绝：
+rawPlaneMax=55.5~62.3° > 35°，而 upperMax 和 torsoMax 都正常。
+
+V4.4.30 正式训练已经明确不再使用 absolute B quaternion 作为正式平面 P，改成 A/B 差分运动轴 BODY motion plane；因此继续用旧 raw B quaternion 去否决 K11 校准是自相矛盾的，并造成 READY -> REJECT -> 重新校准无限循环。
+
+V4.4.31：
+1. K11 校准只负责学习肘关节运动轴。
+2. raw B quaternion plane 保留为日志诊断，不再能拒绝/重启校准。
+3. 校准验收仅保留上臂大幅代偿、躯干大幅代偿两个 gross safety gate。
+4. 正式 XOZ/YOZ 平面算法保持 V4.4.30，不回退。
+5. 角度零点、IMU 自动重连、屏幕协议相关代码不改。
+
+正常日志应出现：
+V4_4_31_K11_CAL_ACCEPTED
+
+如果仍被拒绝，只可能出现：
+V4_4_31_K11_CAL_REJECTED ... reasons=UPPER_ARM / TORSO
+不会再因 rawPlaneDiag 触发循环。

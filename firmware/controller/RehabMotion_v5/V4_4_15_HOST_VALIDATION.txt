@@ -1,0 +1,33 @@
+V4.4.16 STATIC/HOST VALIDATION
+
+sensor_count_5: PASS
+active_count_5: PASS
+active_indices_01234: PASS
+A_mac: PASS
+B_mac: PASS
+C_mac: PASS
+D_mac: PASS
+E_mac: PASS
+left_pair_AB: PASS
+right_pair_CD: PASS
+torso_slot_E: PASS
+snapshot_E: PASS
+a2_uses_E: PASS
+body_code_E: PASS
+json_E_role: PASS
+no_old_torso_slot: PASS
+no_old_a2_slots: PASS
+scan_all_five: PASS
+
+LEX gyro_elbow_k11.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX k11_right_engine.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX real_imu_abcde.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX motion_output.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX torso_reference.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX sd_logger.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX training_logic.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX training_assessment_v4.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX pin_config.h: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+LEX RehabMotion_v4_4_16_ABCDE_E_TORSO.ino: PASS balances={'()': (0, 0), '{}': (0, 0), '[]': (0, 0)} state=code
+
+Full Arduino/ESP32 compile: NOT RUN (exact user Arduino/TFT_eSPI/SdFat/BLE environment unavailable in this container).

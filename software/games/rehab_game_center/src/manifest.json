@@ -1,0 +1,26 @@
+{
+  "name": "RehabMotion摘水果临时工程",
+  "appid": "",
+  "description": "可迁移普通分包的临时测试外壳",
+  "versionName": "1.0.0",
+  "versionCode": "100",
+  "transformPx": false,
+  "app-plus": {
+    "usingComponents": true,
+    "screenOrientation": [
+      "landscape-primary",
+      "landscape-secondary"
+    ]
+  },
+  "mp-weixin": {
+    "appid": "",
+    "setting": {
+      "urlCheck": false
+    },
+    "usingComponents": true
+  },
+  "uniStatistics": {
+    "enable": false
+  },
+  "vueVersion": "3"
+}

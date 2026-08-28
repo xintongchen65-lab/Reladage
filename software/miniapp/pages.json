@@ -1,0 +1,366 @@
+{
+  "pages": [
+    {
+      "path": "pages/role/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "选择使用端",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "首页"
+      }
+    },
+    {
+      "path": "pages/plan/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "训练"
+      }
+    },
+    {
+      "path": "pages/report/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "报告"
+      }
+    },
+    {
+      "path": "pages/profile/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "我的"
+      }
+    },
+    {
+      "path": "pages/members/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "家庭成员"
+      }
+    },
+    {
+      "path": "pages/records/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "训练记录"
+      }
+    },
+    {
+      "path": "pages/daily/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "每日训练详情"
+      }
+    },
+    {
+      "path": "pages/mode/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "关节模式"
+      }
+    },
+    {
+      "path": "pages/training/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "实时训练",
+        "disableScroll": true
+      }
+    },
+    {
+      "path": "pages/maintenance/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "设备维护"
+      }
+    },
+    {
+      "path": "pages/report/week",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "完整周报"
+      }
+    },
+    {
+      "path": "pages/report/month",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "月度报告"
+      }
+    },
+    {
+      "path": "pages/report/trend",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "长期趋势"
+      }
+    },
+    {
+      "path": "pages/report/professional",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "专业数据"
+      }
+    },
+    {
+      "path": "pages/alerts/index",
+      "style": {
+        "navigationStyle": "custom",
+        "navigationBarTitleText": "消息中心"
+      }
+    },
+    {
+      "path": "pages/agent/index",
+      "style": {
+        "navigationBarTitleText": "小思",
+        "navigationBarBackgroundColor": "#F5F6F3",
+        "navigationBarTextStyle": "black"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "RehabMotion",
+    "navigationBarBackgroundColor": "#F3F6F4",
+    "backgroundColor": "#F3F6F4",
+    "backgroundTextStyle": "dark"
+  },
+  "subPackages": [
+    {
+      "root": "pages-therapist",
+      "pages": [
+        {
+          "path": "home/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "patients/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "tasks/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "profile/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "patient-detail/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "ai-review/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        },
+        {
+          "path": "alert-detail/index",
+          "style": {
+            "navigationStyle": "custom"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages-fruit-game",
+      "pages": [
+        {
+          "path": "home/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "portrait"
+          }
+        },
+        {
+          "path": "prepare/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "game/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "result/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages-penalty-game",
+      "pages": [
+        {
+          "path": "home/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "portrait"
+          }
+        },
+        {
+          "path": "prepare/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "calibrate/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "game/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "result/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages-vitality-park",
+      "pages": [
+        {
+          "path": "home/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "portrait"
+          }
+        },
+        {
+          "path": "prepare/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "game/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "result/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages-mole-game",
+      "pages": [
+        {
+          "path": "home/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "portrait"
+          }
+        },
+        {
+          "path": "prepare/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "game/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        },
+        {
+          "path": "result/index",
+          "style": {
+            "navigationStyle": "custom",
+            "pageOrientation": "landscape",
+            "disableScroll": true
+          }
+        }
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "#87938F",
+    "selectedColor": "#2F7867",
+    "backgroundColor": "#FFFFFF",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "static/tabbar/home.png",
+        "selectedIconPath": "static/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/plan/index",
+        "text": "训练",
+        "iconPath": "static/tabbar/training.png",
+        "selectedIconPath": "static/tabbar/training-active.png"
+      },
+      {
+        "pagePath": "pages/report/index",
+        "text": "报告",
+        "iconPath": "static/tabbar/report.png",
+        "selectedIconPath": "static/tabbar/report-active.png"
+      },
+      {
+        "pagePath": "pages/profile/index",
+        "text": "我的",
+        "iconPath": "static/tabbar/profile.png",
+        "selectedIconPath": "static/tabbar/profile-active.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+RehabMotion v5 断电续训 - Arduino 编译修复
+
+修复错误：
+  'PowerResumeCheckpoint' does not name a type
+
+原因：
+Arduino IDE 会自动为 .ino 里的函数生成原型，这些原型可能被放到 .ino 内部 struct PowerResumeCheckpoint 定义之前，导致带该类型参数的函数原型无法识别类型。
+
+修复：
+将 POWER_RESUME_* 常量和 PowerResumeCheckpoint 结构体移动到 power_resume_checkpoint.h，并在主 .ino 顶部 include。
+断电续训逻辑、动作识别算法、训练判定均未改动。

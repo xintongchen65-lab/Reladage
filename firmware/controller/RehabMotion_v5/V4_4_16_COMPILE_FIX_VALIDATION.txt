@@ -1,0 +1,15 @@
+RehabMotion V4.4.16 compile-fix validation
+
+Fixed the V4.4.15 D->E migration mismatch in torsoRefRebaselineTorsoFromLatest():
+  OLD: WT901Vec3 gd; ... torsoExerciseBaselineGravityLocal = ge;
+  NEW: WT901Vec3 ge; ... torsoExerciseBaselineGravityLocal = ge;
+
+Additional semantic cleanup:
+- local torso sensor variables in torso_reference.h now use E-oriented names (e/ge/qE/eTorso/er/ue)
+- no TRFrontSnapshot.s.d references
+- no TRFrontGeometry.g.gd references
+- TORSO_REF_SLOT remains 4 (E)
+- A/B = left pair, C/D = right pair, E = waist/abdomen
+- E MAC remains f3:72:ae:1f:e4:e9
+
+Full Arduino/ESP32 compile was NOT performed in this container.

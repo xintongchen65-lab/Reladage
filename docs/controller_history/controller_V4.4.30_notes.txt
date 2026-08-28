@@ -1,0 +1,19 @@
+RehabMotion V4.4.30 — XOZ/YOZ 平面改为“BODY 坐标中的 A/B 差分运动轴”
+
+目标：人体不转；Z=身体竖直、X=正前方、Y=侧方。标准屈肘在 X-Z；错误测试在 Y-Z，也就是手臂动作平面绕 Z 旋转约 90°。
+
+V4.4.29 实测问题：前两个 XOZ 正确、YOZ 也能报错，但重新回 XOZ 后 B 的绝对四元数平面残留约 40~50°，于是标准动作又被报成平面偏移。
+
+V4.4.30 不再拿 B 的 absolute quaternion/yaw 做正式 P。
+
+新算法：
+1. BODY-FRONT 通过时，同时把 A、B、E 的“绕世界 Z 的陀螺积分”清零。
+2. 该 Z 角速度直接由 roll/pitch + 本地 gyro 算 world-Z 分量，数学上与 Euler yaw 无关，所以磁航向漂移不会进入正式平面。BLE 每个通知包到达时就积分，避免 TFT/SD/Serial 阻塞漏掉转动。
+3. A-E、B-E 分别得到上臂和前臂相对躯干绕 Z 的物理转角；整个人转身时 A/B/E 同向转动，会自动抵消。
+4. K11 一次标准屈肘已经学到了标准 A/B 差分旋转轴。正式训练时，把 A 和 B 当前 gyro 从各自校准的 FRONT/SIDE 坐标，分别按 A-E、B-E 的 Z 转角映射到统一 BODY 坐标，再做 B-A。
+5. 当前 BODY 差分运动轴与 K11 标准轴的夹角就是平面偏移：XOZ 应接近 0°；YOZ 应接近 90°。
+6. 正式 P=max(A/B差分运动平面, A_SIDE, K11_HINGE)。B_QUAT/E yaw/BODY_AZ 只保留诊断。
+7. 每次回到自然下垂只清“本次运动平面显示值”，不会清 A-E/B-E 的 Z 转角，因此手臂在下垂时绕 Z 转 90°不会被当成新的标准。
+
+新增日志字段：upper_body_relative_z_gyro_deg、fore_body_relative_z_gyro_deg、fore_motion_plane_deg。
+屏幕无需重新烧录。

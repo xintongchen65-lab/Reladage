@@ -1,0 +1,60 @@
+RehabMotion v14.3 五 IMU + 离线语音集成验证报告
+日期：2026-08-21
+
+一、源文件安全性
+- 用户提供的原始 ZIP 压缩包未被修改。
+- 集成工作在以下独立目录中完成：
+  D:\ican\work\main_controller_v14_3_5IMU_STABLE_integration
+
+二、引脚检查
+- 7 寸屏 UART1：TX 为 GPIO8，RX 为 GPIO9。
+- 旧 TFT 片选：GPIO10。
+- SD 卡 SPI：MOSI 为 GPIO11，SCK 为 GPIO12，MISO 为 GPIO13，CS 为 GPIO16。
+- 蜂鸣器：GPIO21。
+- 语音板 UART2：TX 为 GPIO17，RX 为 GPIO18。
+- 检查结果：通过。所有 PIN_* 引脚定义均无重复占用。
+
+三、语音板接线
+- 主控 GPIO17（TX）→ 语音板 GPIO44（RX）。
+- 主控 GPIO18（RX）← 语音板 GPIO43（TX）。
+- 主控 GND 与语音板 GND 必须共地。
+- 串口参数：115200 波特率、8N1、仅限 3.3V TTL 电平。
+
+四、语音事件检查
+- START_FLOW：屏幕发送的 START_FLOW 命令被主控接受后触发；沿用现有屏幕序号去重机制，不会因重发重复播报。
+- CALIBRATION_START：人体方向校准真正开始时触发。
+- TRAINING_START：屏幕倒计时结束并正式释放训练时触发；不使用屏幕流程时，在 K11 训练真正就绪后触发。
+- PAUSE：训练状态确实由 RUNNING 变为 PAUSED 后触发。
+- RESUME：起始姿势和基线检查通过，状态确实由 PAUSED 变为 RUNNING 后触发。
+- SET_DONE：非最后一组训练完成并进入组间休息时触发。
+- NEXT_SET：休息结束、起始姿势重新确认通过且下一组真正开始时触发。
+- TRAINING_DONE：最后一组达到目标并正常完成全部训练时触发。
+- SENSOR_ERROR：正式流程依赖的 A/B/E 传感器由正常接收变为失联时触发；采用边沿触发，同一次持续失联只播报一次。
+- STOP：训练或休息中的有效会话被用户提前结束时触发。
+
+五、驱动验证
+- rehab_voice_link.cpp 已使用 ESP32-S3 GCC 14.2.0 交叉编译器进行验证。
+- 编译参数：-std=gnu++17 -Wall -Wextra -Werror。
+- 编译结果：通过，零警告、零错误。
+- CRC 已知向量 C,1,PING → B6：通过。
+- .ino、.h、.cpp 和 pin_config.h 的注释、字符串及括号词法结构检查：通过。
+- 10 个语音事件存在性检查和引脚唯一性检查：通过。
+
+六、实时性设计
+- 正式主控优先使用非阻塞的 queue*() 接口。
+- 主循环每次迭代调用一次 rehabVoice.update()。
+- ACK 检查与重试过程不包含 delay()，也不存在阻塞等待 ACK 的循环。
+- 语音板正在播放而返回 NACK 时，主控使用同一序号重试；当前语音结束后，语音板可接受待播命令，同时不会因重试重复播放。
+- 重试次数有明确上限：最多 32 次，每次间隔 250 毫秒，最长约 8 秒。
+
+七、完整 Arduino 编译边界
+- 项目要求：Arduino ESP32 3.1.1、NimBLE-Arduino 2.5.0 或更高版本、TFT_eSPI、SdFat。
+- 本次集成时，这台电脑只有 Arduino ESP32 2.0.9，且未安装项目所需的 NimBLE-Arduino、TFT_eSPI 和 SdFat 用户库。
+- 因此，本报告没有声称完整主控 Arduino 工程已经编译通过。
+
+八、剩余硬件验收步骤
+1. 使用项目要求的 Arduino 环境编译集成后的主控工程。
+2. 将集成后的主控程序烧录到 RehabMotion ESP32-S3 主控。
+3. 按照本文档连接 GPIO17、GPIO18，并确保两块板 GND 共地。
+4. 执行“7 寸屏 → 主控 → 语音板”的三板端到端联调。
+5. 逐项确认 10 个语音事件，并检查播报期间 IMU 数据包计数和 QDROP 诊断是否保持稳定。

@@ -1,0 +1,14 @@
+{
+  "data_origin": "SYNTHETIC_SAMPLE",
+  "exercise": "dumbbell_curl",
+  "set_index": 1,
+  "target_sets": 3,
+  "rep_count": 8,
+  "target_reps": 10,
+  "current_angle_deg": 68.4,
+  "peak_rom_deg": 86.2,
+  "plane_deviation_deg": 9.1,
+  "upper_arm_compensation_deg": 6.3,
+  "torso_tilt_deg": 3.2,
+  "quality": "GOOD"
+}

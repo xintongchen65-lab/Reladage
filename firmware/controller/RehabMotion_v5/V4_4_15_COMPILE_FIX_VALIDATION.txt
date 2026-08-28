@@ -1,0 +1,8 @@
+V4.4.16 static validation
+- TRFrontSnapshot fields: a,b,e only.
+- No s.d references remain in torso_reference.h.
+- trCaptureNeutral reads s.e for E gravity/quaternion.
+- trFrontGeometry reads s.e.
+- E torso slot remains TORSO_REF_SLOT=4.
+- A/B left pair; C/D right pair unchanged.
+- Full Arduino/ESP32 compile was NOT run in this container.
